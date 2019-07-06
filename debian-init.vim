@@ -18,6 +18,10 @@ set foldmethod=indent
 hi StatusLine ctermbg=black  ctermfg=cyan
 hi StatusLineNC ctermbg=black ctermfg=8
 
+" Popup Menu colors (i.e. when using omnicomplete)
+hi Pmenu ctermbg=black ctermfg=gray
+hi PmenuSel ctermbg=blue ctermfg=white
+
 " Disable autofolding upon opening a file.
 " By default, foldlevel=0, which means that vim will
 " autofold everything with 1 level of indentation.
