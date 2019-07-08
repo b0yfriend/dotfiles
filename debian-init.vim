@@ -25,6 +25,11 @@ hi PmenuSel ctermbg=blue ctermfg=white
 " Vertical Split colors
 hi VertSplit ctermfg=black ctermbg=black
 
+" Tab bar colors
+hi TabLineFill ctermfg=cyan
+hi TabLine cterm=none ctermfg=black ctermbg=cyan
+hi TabLineSel ctermfg=cyan ctermbg=black
+
 " Disable autofolding upon opening a file.
 " By default, foldlevel=0, which means that vim will
 " autofold everything with 1 level of indentation.
