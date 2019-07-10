@@ -350,7 +350,7 @@ format-full-underline = ${colors.primary}
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
-warn-temperature = 70
+warn-temperature = 85
 
 format = <label>
 format-underline = ${colors.primary}
