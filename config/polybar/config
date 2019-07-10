@@ -335,21 +335,22 @@ adapter = AC
 full-at = 98
 
 format-charging = <label-charging>
-format-charging-underline = #072130
+format-charging-underline = ${colors.primary}
 
 label-charging = %{T3}%{T-} %percentage:3%%
 
 format-discharging = <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
+format-discharging-underline = ${colors.primary}
 
 label-discharging = ${self.label-charging}
 
 label-full = ${self.label-charging}
+format-full-underline = ${colors.primary}
 
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
-warn-temperature = 60
+warn-temperature = 70
 
 format = <label>
 format-underline = ${colors.primary}
