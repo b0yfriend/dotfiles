@@ -30,6 +30,7 @@ colorscheme gruvbox
 set background=dark
 let g:gruvbox_guisp_fallback='fg'
 let g:gruvbox_improved_warnings=1
+let g:gruvbox_sign_column='bg0'
 
 " True Color support
 set termguicolors
@@ -125,5 +126,6 @@ let g:ale_fixers = {
 let g:javascript_plugin_flow = 1
 let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1
+set signcolumn=yes
 nnoremap gd :ALEGoToDefinition<CR>
 nnoremap gh :ALEHover<CR>
