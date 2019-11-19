@@ -132,3 +132,6 @@ inoremap <silent> <C-Space> <C-\><C-O>:ALEComplete<CR>
 set signcolumn=yes
 nnoremap gd :ALEGoToDefinition<CR>
 nnoremap gh :ALEHover<CR>
+
+" Goyo settings
+let g:goyo_width = 100
