@@ -30,6 +30,7 @@ colorscheme gruvbox
 set background=dark
 let g:gruvbox_guisp_fallback='fg'
 let g:gruvbox_improved_warnings=1
+let g:gruvbox_sign_column='bg0'
 
 " True Color support
 set termguicolors
@@ -101,21 +102,18 @@ augroup startup
   autocmd VimEnter * call SetGrepPrg()
 augroup END
 
-" Enable fzf for vim. (If installed using Homebrew)
-set rtp+=/usr/local/opt/fzf
-
-" Enable fzf for vim. (If installed using git)
-" set rtp+=~/.fzf
-
 " (By default, <leader> is mapped to \)
-" Run fzf's `:Files` Ex-command using `\f`
-nnoremap <leader>f :Files<CR>
+set rtp+=~/.fzf
 
 " Run fzf's `:Buffers` Ex-command using `\b`
 nnoremap <leader>b :Buffers<CR>
 
 " Run fzf's `:Lines` Ex-command using `\l`
 nnoremap <leader>l :Lines<CR>
+
+" Use myc for searching files
+set rtp+=/usr/local/share/myc/vim
+nnoremap <leader>f :MYC<CR>
 
 " == SOFT TAB SETTINGS == "
 
@@ -124,3 +122,25 @@ set shiftwidth=2  " Set shift/indent width as 2 characters
                   " (Some people define tabs differently from shifts/indents)
 
 set expandtab     " Use spaces to achieve the tab effects above.
+
+" ALE settings
+let g:ale_linters = {
+\  'javascript': ['flow-language-server']
+\}
+
+let g:ale_fixers = {
+\  'javascript': ['prettier']
+\}
+
+let g:javascript_plugin_flow = 1
+let g:ale_fix_on_save = 1
+
+" Use <C-Space> to manually trigger ALE autocompletion
+inoremap <silent> <C-Space> <C-\><C-O>:ALEComplete<CR>
+
+set signcolumn=yes
+nnoremap gd :ALEGoToDefinition<CR>
+nnoremap gh :ALEHover<CR>
+
+" Goyo setings
+let g:goyo_width = 100
