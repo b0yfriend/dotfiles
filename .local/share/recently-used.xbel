@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xbel version="1.0"
+      xmlns:bookmark="http://www.freedesktop.org/standards/desktop-bookmarks"
+      xmlns:mime="http://www.freedesktop.org/standards/shared-mime-info"
+>
+  <bookmark href="file:///home/anton/Downloads/wall.jpg" added="2020-01-27T06:01:59Z" modified="2020-01-27T06:01:59Z" visited="2020-01-27T06:01:59Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/jpeg"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2020-01-27T06:01:59Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/anton/Downloads/st-disable-bold-italic-fonts-0.8.2.diff" added="2020-01-27T06:55:02Z" modified="2020-01-27T06:55:02Z" visited="2020-01-27T06:55:03Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-patch"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2020-01-27T06:55:02Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/anton/Downloads/st-disable-bold-italic-fonts.diff" added="2020-01-27T07:08:00Z" modified="2020-01-27T07:08:01Z" visited="2020-01-27T07:08:01Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-patch"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2020-01-27T07:08:01Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/anton/Downloads/dwm-alpha-20180613-b69c870.diff" added="2020-01-27T07:14:08Z" modified="2020-01-28T04:37:53Z" visited="2020-01-27T07:14:09Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-patch"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2020-01-28T04:37:53Z" count="4"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/anton/Downloads/dwm-colorbar-6.2.diff" added="2020-01-27T09:26:19Z" modified="2020-01-28T05:09:42Z" visited="2020-01-27T09:26:19Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-patch"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2020-01-28T05:09:42Z" count="6"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/anton/Downloads/wallpaper.png" added="2020-01-28T06:45:45Z" modified="2020-01-28T06:45:45Z" visited="2020-01-28T06:45:45Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2020-01-28T06:45:45Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/anton/Downloads/dwm-alttagsdecoration-2020010304-cb3f58a.diff" added="2020-01-28T07:14:58Z" modified="2020-01-28T07:14:58Z" visited="2020-01-28T07:14:58Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-patch"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2020-01-28T07:14:58Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/anton/Downloads/dwm-statuspadding-20150524-c8e9479.diff" added="2020-01-28T17:07:44Z" modified="2020-01-28T17:07:45Z" visited="2020-01-28T17:07:45Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-patch"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2020-01-28T17:07:45Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/anton/Downloads/dwm-barpadding-6.2.diff" added="2020-01-28T17:16:25Z" modified="2020-01-28T17:16:25Z" visited="2020-01-28T17:16:25Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-patch"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2020-01-28T17:16:25Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/anton/Downloads/base16-3024.vim" added="2020-01-28T18:10:48Z" modified="2020-01-28T18:10:49Z" visited="2020-01-28T18:10:49Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2020-01-28T18:10:49Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/anton/Downloads/dwm-fullscreen-6.2.diff" added="2020-01-29T06:40:13Z" modified="2020-01-29T06:40:14Z" visited="2020-01-29T06:40:14Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-patch"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2020-01-29T06:40:14Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/anton/Downloads/st-font2-20190416-ba72400.diff" added="2020-02-05T06:12:09Z" modified="2020-02-10T06:22:26Z" visited="2020-02-05T06:12:09Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-patch"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2020-02-05T06:12:09Z" count="2"/>
+          <bookmark:application name="google-chrome-stable" exec="&apos;google-chrome-stable %u&apos;" modified="2020-02-10T06:22:26Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/anton/Downloads/README.md" added="2020-02-05T06:38:21Z" modified="2020-02-05T06:38:21Z" visited="2020-02-05T06:38:22Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/markdown"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2020-02-05T06:38:21Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/anton/Downloads/st-scrollback-20190331-21367a0.diff" added="2020-02-06T06:55:47Z" modified="2020-02-06T06:55:47Z" visited="2020-02-06T06:55:48Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-patch"/>
+        <bookmark:applications>
+          <bookmark:application name="google-chrome-stable" exec="&apos;google-chrome-stable %u&apos;" modified="2020-02-06T06:55:47Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+</xbel>

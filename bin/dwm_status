@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+SCRIPT_DIR="$(dirname "$0")"
+
+while true
+  do "$SCRIPT_DIR/refresh_dwm_status_bar"
+  sleep 1m
+done
