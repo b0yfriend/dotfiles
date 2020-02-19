@@ -1,0 +1,17 @@
+google-chrome/
+glib-2.0/
+gtk-3.0/
+mimeapps.list
+pulse/
+.Xauthority
+.bash_history
+.bash_logout
+.cache/
+.fehbg
+.lesshst
+.pki/
+.ssh/
+.terminfo
+.wpa_cli_history
+projects/
+custompkgs/
