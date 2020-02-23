@@ -1,9 +1,9 @@
 # Increase volume
-"amixer set Master 5%+; refresh_dwm_status_bar"
+"amixer set Master unmute; amixer set Master 5%+; refresh_dwm_status_bar"
   XF86AudioRaiseVolume
 
 # Decrease volume
-"amixer set Master 5%-; refresh_dwm_status_bar"
+"amixer set Master unmute; amixer set Master 5%-; refresh_dwm_status_bar"
   XF86AudioLowerVolume
 
 # Mute/Unmute volume
