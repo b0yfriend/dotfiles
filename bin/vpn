@@ -1,0 +1,196 @@
+#!/usr/bin/env bash
+
+NETWORK=${NETWORK:-FB-VPN}
+VPN_HOST=${VPN_HOST:-sncvpn.thefacebook.com}
+VPN_USER=${VPN_USER:-$(whoami)}
+VPN_AUTHGROUP=foo
+VPN_CA_FILE=/etc/pki/ca-trust/source/anchors/facebook-ca-bundle.crt
+VPN_CERTIFICATE=/var/facebook/credentials/$VPN_USER/lighthouse/cert.pem
+VPN_SSL_KEY=/var/facebook/credentials/$VPN_USER/lighthouse/key.pem
+
+###############################################################################
+# ARGUMENT PARSING
+###############################################################################
+
+SCRIPT_NAME=`basename "$0"`
+
+for i in "$@"; do
+    case $i in
+        -u|--up)
+        ARG_BRING_UP_NETWORK="yes"
+        shift # past argument with no value
+        ;;
+        -d|--down)
+        ARG_BRING_DOWN_NETWORK="yes"
+        shift # past argument with no value
+        ;;
+        -s|--status)
+        ARG_PRINT_STATUS="yes"
+        shift # past argument with no value
+        ;;
+        -p|--push)
+        ARG_PASSWD_PUSH="yes"
+        shift # past argument with no value
+        ;;
+        -e|--experimental)
+        ARG_EXPERIMENTAL="yes"
+        shift # past argument with no value
+        ;;
+        -v|--verbose)
+        ARG_VERBOSE="yes"
+        shift # past argument with no value
+        ;;
+        -h|--help)
+        ARG_HELP="yes"
+        shift # past argument with no value
+        ;;
+        *)
+              # unknown option
+        ;;
+    esac
+done
+
+if [ \
+  "$ARG_BRING_UP_NETWORK" != "yes" -a \
+  "$ARG_BRING_DOWN_NETWORK" != "yes" -a \
+  "$ARG_PRINT_STATUS" != "yes" \
+  ]; then
+  NO_ACTION_PROVIDED="yes"
+fi
+
+if [ "$ARG_HELP" = "yes" -o "$NO_ACTION_PROVIDED" = "yes" ]; then
+    printf "$SCRIPT_NAME [options]\n"
+    printf "\n"
+    printf "    -u,--up\n"
+    printf "        Bring up VPN network\n"
+    printf "    -d,--down\n"
+    printf "        Bring down VPN network\n"
+    printf "    -s,--status\n"
+    printf "        Print out status of VPN network\n"
+    printf "    -p,--push\n"
+    printf "        For 2FA, rather than Yubikey input, use 'push' and duo mobile\n"
+    printf "    -e,--experimental\n"
+    printf "        Tries to use experimental nmcli-openconnect integration\n"
+    printf "    -v,--verbose\n"
+    printf "        Show verbose logs\n"
+    printf "    -h,--help\n"
+    printf "        Display this help message\n"
+    exit 0
+fi
+
+vprintf() {
+  if [ "$ARG_VERBOSE" = "yes" ]; then
+    printf "$@" 1>&2
+  fi
+}
+
+###############################################################################
+# MAIN
+###############################################################################
+
+# Stand up network by getting our PEM passphrase, getting the 2FA passphrase
+# via push (duomobile) or Yubikey, retrieving cookie & fingerprint from
+# openconnect, and then using the VPN profile to connect
+if [ "$ARG_BRING_UP_NETWORK" = "yes" -a "$ARG_EXPERIMENTAL" = "yes" ]; then
+  # Retrieve PEM passphrase if not provided
+  PEM_PASSPHRASE=${PEM_PASSPHRASE:-$(secret-tool search \
+    --unlock \
+    setting-name 802-1x setting-key \
+    private-key-password 2> /dev/null | grep '^secret' | awk '{print $3}')}
+
+  # Normally comes from Yubikey, but we'll default to push here to Duo Mobile
+  if [ "$ARG_PASSWD_PUSH" = "yes" ]; then
+    vprintf "Requesting 2FA password from Duo Mobile...\n"
+    PASSWD=push
+  else
+    printf "Yubikey Password: "
+    read PASSWD
+  fi
+
+  # Evaluate openconnect to get cookie and fingerprint
+  # in form of $COOKIE and $FINGERPRINT (and $HOST, which we don't use)
+  #
+  # NOTE: Because we have 2FA, need to pipe out the PEM Passphrase
+  #       AND the response (Yubikey or push)
+  eval $((echo "$PEM_PASSPHRASE"; echo "$PASSWD") | openconnect \
+    --quiet \
+    --cafile $VPN_CA_FILE \
+    --certificate $VPN_CERTIFICATE \
+    --sslkey $VPN_SSL_KEY \
+    --user $VPN_USER \
+    --authgroup $VPN_AUTHGROUP \
+    $VPN_HOST \
+    --authenticate \
+    --passwd-on-stdin)
+
+  # If fingerprint or cookie is missing, fail early
+  [ -z "$FINGERPRINT" -o -z "$COOKIE" ] && \
+    echo "Error! Can not authenticate" && exit 1
+
+  # Write contents to temp file
+  TMP_FILE=$(mktemp)
+  vprintf "Created temporary passwd-file at $TMP_FILE\n"
+  chmod 600 "$TMP_FILE"
+  echo "vpn.secrets.gateway:$VPN_HOST" >> "$TMP_FILE"
+  echo "vpn.secrets.cookie:$COOKIE" >> "$TMP_FILE"
+  echo "vpn.secrets.gwcert:$FINGERPRINT" >> "$TMP_FILE"
+  chmod 400 "$TMP_FILE"
+
+  # TODO: The connection seems to fail fairly often, so need to see what
+  #       is missing that is preventing a solid connection every time
+  #
+  # NOTE: Seems like entering the info manually with --ask worked
+  #       on first try (fluke?); if not a fluke, could be an issue with
+  #       writing info to a file
+  nmcli c up $NETWORK passwd-file "$TMP_FILE"
+
+  # Remove temp file
+  vprintf "Removed temporary passwd-file\n"
+  printf "FILE: $TMP_FILE\n"
+  rm -f "$TMP_FILE"
+
+# Bring up VPN using pure openconnect
+elif [ "$ARG_BRING_UP_NETWORK" = "yes" ]; then
+  # Retrieve PEM passphrase if not provided
+  PEM_PASSPHRASE=${PEM_PASSPHRASE:-$(secret-tool search \
+    --unlock \
+    setting-name 802-1x setting-key \
+    private-key-password 2> /dev/null | grep '^secret' | awk '{print $3}')}
+
+  # Normally comes from Yubikey, but we'll default to push here to Duo Mobile
+  if [ "$ARG_PASSWD_PUSH" = "yes" ]; then
+    vprintf "Requesting 2FA password from Duo Mobile...\n"
+    PASSWD=push
+  else
+    printf "Yubikey Password: "
+    read PASSWD
+  fi
+
+  # Launch openconnect to perform VPN tunneling, running in foreground as
+  # is easier to work with than the --background option which prevents closing
+  # the associated terminal
+  #
+  # NOTE: Because we have 2FA, need to pipe out the PEM Passphrase
+  #       AND the response (Yubikey or push)
+  (echo "$PEM_PASSPHRASE"; echo "$PASSWD") | sudo openconnect \
+    --cafile $VPN_CA_FILE \
+    --certificate $VPN_CERTIFICATE \
+    --sslkey $VPN_SSL_KEY \
+    --timestamp \
+    --deflate \
+    --mtu 1328 \
+    $VPN_HOST
+
+# Bring down our VPN network
+elif [ "$ARG_BRING_DOWN_NETWORK" = "yes" ]; then
+  nmcli c down $NETWORK
+
+# Print out whether or not our VPN network is connected
+elif [ "$ARG_PRINT_STATUS" = "yes" ]; then
+  TEXT_STATUS="down"
+  if [ "$(nmcli c show --active | grep "^$NETWORK\\b")" ]; then
+    TEXT_STATUS="up"
+  fi
+
+  printf "$NETWORK: $TEXT_STATUS\n"
+fi
