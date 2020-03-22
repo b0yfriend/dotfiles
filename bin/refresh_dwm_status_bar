@@ -16,7 +16,7 @@ else
   AUDIO_LABEL="VOL $VOLUME"
 fi
 
-TIME="$(date '+%l:%M %p')"
+TIME="$(date '+%a %l:%M %p')"
 
 LABEL="$TIME  $BATTERY  $AUDIO_LABEL  $TEMP"
 
