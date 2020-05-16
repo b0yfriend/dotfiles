@@ -1,0 +1,144 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/polybar/polybar
+;
+;   The README contains a lot of information
+;
+;==========================================================
+
+[colors]
+background = ${xrdb:background:#282828}
+foreground = ${xrdb:foreground:#ebdbb2}
+red = ${xrdb:color1:#cc241d}
+green = ${xrdb:color2:#98971a}
+blue = ${xrdb:color4:#458588}
+
+[bar/bar]
+enable-ipc=true
+height = 45
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+padding = 0
+
+font-0 = scientifica:size=20;2
+font-1 = Font Awesome 5 Free Regular:size=13;4
+font-2 = Font Awesome 5 Free Solid:size=13;4
+
+modules-left = bspwm
+modules-center = date
+modules-right = alsa battery temperature
+
+wm-restack = bspwm
+override-redirect = false
+
+[module/bspwm]
+type = internal/bspwm
+format = <label-state>
+format-padding = 2
+index-sort = true
+
+enable-click = true
+reverse-scroll = false
+
+label-focused = 
+label-focused-font = 3
+label-focused-padding = 1
+
+label-occupied = 
+label-occupied-padding = 1
+
+label-empty = 
+label-empty-padding = 1
+
+[module/date]
+type = internal/date
+interval = 10
+format-padding = 3
+
+time = "%l:%M %p"
+date = "%a"
+
+label = %date% %time%
+label-padding = 2
+
+[module/alsa]
+type = internal/alsa
+
+format-volume-padding = 3
+format-volume = <ramp-volume><label-volume>
+label-volume = %percentage:4:4%%
+use-ui-max = false
+interval = 5
+
+ramp-volume-0 = ""
+ramp-volume-1 = ""
+ramp-volume-2 = ""
+ramp-volume-0-foreground = ${colors.blue}
+ramp-volume-1-foreground = ${colors.blue}
+ramp-volume-2-foreground = ${colors.blue}
+
+
+format-muted-padding = 2
+label-muted = ""   
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 98
+
+format-charging = <ramp-capacity> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+format-full = <ramp-capacity> <label-full>
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-0-foreground = ${colors.green}
+ramp-capacity-1-foreground = ${colors.green}
+ramp-capacity-2-foreground = ${colors.green}
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 70
+
+format = <ramp> <label>
+format-padding = 2
+format-warn = <ramp> <label-warn>
+format-warn-padding = 2
+
+label = %temperature-c%
+label-warn = %temperature-c%
+label-warn-foreground = #db3030
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-foreground = ${colors.red}
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+;pseudo-transparency = false
+
+[global/wm]
+margin-top = 0
+margin-bottom = 0
+
+; vim:ft=dosini

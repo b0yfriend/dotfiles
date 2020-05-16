@@ -1,0 +1,4 @@
+XTerm*faceName: scientifica:style=Regular,xft:Font Awesome 5 Free Regular:style=Regular,
+XTerm*faceSize: 10
+XTerm*internalBorder: 20
+XTerm*allowBoldFonts: false

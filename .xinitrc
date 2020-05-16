@@ -1,6 +1,7 @@
 xbindkeys
 setxkbmap -option caps:escape
 compton &
-dwm_status &
 ~/.fehbg
-exec dwm
+[[ -r ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
+polybar bar &
+exec bspwm

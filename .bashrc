@@ -20,4 +20,4 @@ set -o vi
 stty -ixon
 alias ls='ls --classify --color=always'
 alias less='less -r'
-export PS1="\[\e[1;35;40m\]❯ \[\e[0m\]"
+export PS1="\[\e[0;33;40m\]❯ \[\e[0m\]"

@@ -1,0 +1,4 @@
+x11-misc/polybar alsa ipc network
+media-sound/alsa-utils -ncurses
+x11-wm/bspwm examples
+media-fonts/noto-emoji X

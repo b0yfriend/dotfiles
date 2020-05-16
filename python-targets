@@ -1,0 +1,2 @@
+*/* PYTHON_TARGETS: -python2_7
+x11-misc/compton PYTHON_TARGETS: python3_6
