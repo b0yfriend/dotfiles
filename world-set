@@ -28,7 +28,6 @@ www-client/google-chrome
 x11-apps/setxkbmap
 x11-apps/xev
 x11-base/xorg-server
-x11-libs/cairo
 x11-libs/libXft
 x11-libs/libXinerama
 x11-misc/compton

@@ -7,7 +7,7 @@ alt + Return
 	alacritty
 
 # program launcher
-alt + space
+alt + d
 	rofi -show run
 
 # make sxhkd reload its configuration files:
