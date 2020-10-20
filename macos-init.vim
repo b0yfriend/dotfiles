@@ -102,18 +102,14 @@ augroup startup
   autocmd VimEnter * call SetGrepPrg()
 augroup END
 
-" (By default, <leader> is mapped to \)
-set rtp+=~/.fzf
+" Enable fzf for vim. (If installed on Debian via `apt install fzf`)
+" source /usr/share/doc/fzf/examples/fzf.vim
 
-" Run fzf's `:Buffers` Ex-command using `\b`
-nnoremap <leader>b :Buffers<CR>
+" Enable fzf for vim. (If installed using Homebrew)
+" set rtp+=/usr/local/opt/fzf
 
-" Run fzf's `:Lines` Ex-command using `\l`
-nnoremap <leader>l :Lines<CR>
-
-" Use myc for searching files
-set rtp+=/usr/local/share/myc/vim
-nnoremap <leader>f :MYC<CR>
+" Enable fzf for vim. (If installed using git)
+" set rtp+=~/.fzf
 
 " == SOFT TAB SETTINGS == "
 
