@@ -1,8 +1,11 @@
 #! /bin/sh
 
-sxhkd &
+pgrep -x sxhkd > /dev/null || sxhkd &
 
-bspc monitor -d I II III IV V VI VII VIII IX X
+bspc monitor DP-0 -d 1 2 3 4 5
+# . (period/dot) is prohibited in monitor names, so
+# it must be escaped by prefixing the whole name with %
+bspc monitor HDMI-0 -d 6 7 8 9 0
 
 bspc config border_width         2
 bspc config window_gap          12
@@ -16,5 +19,3 @@ bspc config normal_border_color $GRAY
 
 LIGHTER_GRAY='#928374'
 bspc config focused_border_color $LIGHTER_GRAY
-
-bspc rule -a Screenkey manage=off

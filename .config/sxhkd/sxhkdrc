@@ -7,23 +7,31 @@ alt + Return
 	alacritty
 
 # program launcher
-alt + d
-	rofi -show run
+alt + space
+	rofi -show run -font 'monospace 18'
 
 # make sxhkd reload its configuration files:
 alt + Escape
 	pkill -USR1 -x sxhkd
 
-# Screenshot
-Print
-	scrot '%Y-%m-%d_$wx$h.png' -e 'mv $f ~/shots/'
+# screenshot
+alt + shift + s
+	maim --select "$HOME"/screenshots/"$(date +%F_%T).png"
+
+# emoji typer
+alt + e
+	rofimoji
+
+# clipboard history
+alt + p
+	rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
 
 #
 # bspwm hotkeys
 #
 
 # quit/restart bspwm
-shift + alt + {q,r}
+alt + shift + {q,r}
 	bspc {quit,wm -r}
 
 # close and kill
@@ -35,12 +43,12 @@ alt + m
 	bspc desktop -l next
 
 # send the newest marked node to the newest preselected node
-super + y
+alt + y
 	bspc node newest.marked.local -n newest.!automatic.local
 
-# swap the current node and the biggest node
+# swap the current node and the biggest window
 alt + g
-	bspc node -s biggest
+	bspc node -s biggest.window
 
 #
 # state/flags
@@ -63,16 +71,16 @@ alt + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
 # focus the node for the given path jump
-alt + {p,b,comma,period}
-	bspc node -f @{parent,brother,first,second}
+# alt + {p,b,comma,period}
+# 	bspc node -f @{parent,brother,first,second}
 
-# focus the next/previous node in the current desktop
+# focus the next/previous window in the current desktop
 alt + {_,shift + }c
-	bspc node -f {next,prev}.local
+	bspc node -f {next,prev}.local.!hidden.window
 
-# focus the next/previous desktop in the current monitor
+# focus the next/previous monitor
 alt + bracket{left,right}
-	bspc desktop -f {prev,next}.local
+	bspc monitor -f {prev,next}
 
 # focus the last node/desktop
 alt + {grave,Tab}
@@ -93,19 +101,19 @@ alt + {_,shift + }{1-9,0}
 #
 
 # preselect the direction
-alt + ctrl + {h,j,k,l}
+super + ctrl + {h,j,k,l}
 	bspc node -p {west,south,north,east}
 
 # preselect the ratio
-alt + ctrl + {1-9}
+super + ctrl + {1-9}
 	bspc node -o 0.{1-9}
 
 # cancel the preselection for the focused node
-alt + ctrl + space
+super + ctrl + space
 	bspc node -p cancel
 
 # cancel the preselection for the focused desktop
-alt + ctrl + shift + space
+super + ctrl + shift + space
 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
 #
@@ -117,9 +125,9 @@ super + alt + {h,j,k,l}
 	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
 # contract a window by moving one of its side inward
-super + alt + ctrl + {h,j,k,l}
+super + alt + shift + {h,j,k,l}
 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
 # move a floating window
-super + {h,j,k,l}
+super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}

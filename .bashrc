@@ -20,4 +20,6 @@ set -o vi
 stty -ixon
 alias ls='ls --classify --color=always'
 alias less='less -r'
+alias open='xdg-open'
 export PS1="\[\e[0;33;40m\]❯ \[\e[0m\]"
+export RANGER_LOAD_DEFAULT_RC=FALSE

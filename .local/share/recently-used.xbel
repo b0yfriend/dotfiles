@@ -3,32 +3,22 @@
       xmlns:bookmark="http://www.freedesktop.org/standards/desktop-bookmarks"
       xmlns:mime="http://www.freedesktop.org/standards/shared-mime-info"
 >
-  <bookmark href="file:///home/anton/Downloads/config.txt" added="2020-05-07T07:30:01Z" modified="2020-05-07T07:30:01Z" visited="1969-12-31T23:59:59Z">
+  <bookmark href="file:///home/anton/screenshots/2021-01-17_15:29:17.png" added="2021-01-17T23:29:27.666788Z" modified="2021-01-17T23:29:27.666794Z" visited="2021-01-17T23:29:27.666789Z">
     <info>
       <metadata owner="http://freedesktop.org">
-        <mime:mime-type type="text/plain"/>
+        <mime:mime-type type="image/png"/>
         <bookmark:applications>
-          <bookmark:application name="google-chrome-stable" exec="&apos;google-chrome-stable %u&apos;" modified="2020-05-07T07:30:01Z" count="1"/>
+          <bookmark:application name="discord" exec="&apos;discord %u&apos;" modified="2021-01-17T23:29:27.666791Z" count="1"/>
         </bookmark:applications>
       </metadata>
     </info>
   </bookmark>
-  <bookmark href="file:///home/anton/Downloads/bg.jpg" added="2020-05-12T05:25:05Z" modified="2020-05-12T05:25:05Z" visited="1969-12-31T23:59:59Z">
+  <bookmark href="file:///home/anton/screenshots/2021-01-26_19:35:36.png" added="2021-01-27T03:35:51.837951Z" modified="2021-01-27T03:35:51.837956Z" visited="2021-01-27T03:35:51.837952Z">
     <info>
       <metadata owner="http://freedesktop.org">
-        <mime:mime-type type="image/jpeg"/>
+        <mime:mime-type type="image/png"/>
         <bookmark:applications>
-          <bookmark:application name="google-chrome-stable" exec="&apos;google-chrome-stable %u&apos;" modified="2020-05-12T05:25:05Z" count="1"/>
-        </bookmark:applications>
-      </metadata>
-    </info>
-  </bookmark>
-  <bookmark href="file:///home/anton/Downloads/gruvbox-dark.xresources" added="2020-05-12T08:15:23Z" modified="2020-05-12T08:15:23Z" visited="1969-12-31T23:59:59Z">
-    <info>
-      <metadata owner="http://freedesktop.org">
-        <mime:mime-type type="application/octet-stream"/>
-        <bookmark:applications>
-          <bookmark:application name="google-chrome-stable" exec="&apos;google-chrome-stable %u&apos;" modified="2020-05-12T08:15:23Z" count="1"/>
+          <bookmark:application name="discord" exec="&apos;discord %u&apos;" modified="2021-01-27T03:35:51.837953Z" count="1"/>
         </bookmark:applications>
       </metadata>
     </info>

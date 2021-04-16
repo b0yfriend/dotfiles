@@ -23,8 +23,9 @@ red = ${xrdb:color1:#cc241d}
 green = ${xrdb:color2:#98971a}
 blue = ${xrdb:color4:#458588}
 
-[bar/bar]
+[bar/bar1]
 enable-ipc=true
+monitor=DP-0
 height = 45
 
 background = ${colors.background}
@@ -32,13 +33,34 @@ foreground = ${colors.foreground}
 
 padding = 0
 
-font-0 = scientifica:size=20;2
-font-1 = Font Awesome 5 Free Regular:size=13;4
-font-2 = Font Awesome 5 Free Solid:size=13;4
+font-0 = scientifica:size=17;2
+font-1 = Font Awesome 5 Free Regular:size=11;1
+font-2 = Font Awesome 5 Free Solid:size=11;1
 
 modules-left = bspwm
 modules-center = date
-modules-right = alsa battery temperature
+modules-right = alsa temperature
+
+wm-restack = bspwm
+override-redirect = false
+
+[bar/bar2]
+enable-ipc=true
+monitor=HDMI-0
+height = 45
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+padding = 0
+
+font-0 = scientifica:size=17;2
+font-1 = Font Awesome 5 Free Regular:size=11;1
+font-2 = Font Awesome 5 Free Solid:size=11;1
+
+modules-left = bspwm
+modules-center = date
+modules-right = alsa temperature
 
 wm-restack = bspwm
 override-redirect = false
@@ -91,7 +113,7 @@ ramp-volume-2-foreground = ${colors.blue}
 
 
 format-muted-padding = 2
-label-muted = ""   
+label-muted = ""
 
 [module/battery]
 type = internal/battery
@@ -114,6 +136,8 @@ ramp-capacity-2-foreground = ${colors.green}
 type = internal/temperature
 thermal-zone = 0
 warn-temperature = 70
+
+hwmon-path = /sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon2/temp1_input
 
 format = <ramp> <label>
 format-padding = 2

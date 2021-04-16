@@ -1,7 +1,6 @@
-if [[ -r ~/.profile ]]; then
-	source ~/.profile
-fi
+#
+# ~/.bash_profile
+#
 
-if [[ -r ~/.bashrc ]]; then
-	source ~/.bashrc
-fi
+[[ -f ~/.bashrc ]] && . ~/.bashrc
+[[ -f ~/.profile ]] && . ~/.profile
