@@ -38,6 +38,7 @@ set background=dark
 let g:gruvbox_guisp_fallback='fg'
 let g:gruvbox_improved_warnings=1
 let g:gruvbox_sign_column='bg0'
+let g:gruvbox_invert_selection=0
 
 " True Color support
 set termguicolors
@@ -56,7 +57,7 @@ set smartindent
 
 " Enable smartcase searching.
 " If your search query only contains lowercase letters, it assumes
-" case-insensitive searching.
+" case-INsensitive searching.
 " If your search query contains some uppercase letters, it assumes
 " case-sensitive searching.
 set smartcase
