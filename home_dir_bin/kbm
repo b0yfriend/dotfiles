@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+setxkbmap -option caps:escape
+xmodmap /home/anton/.Xmodmap
+xinput --set-prop 'Cooler Master Technology Inc. MM710 Gaming Mouse' 'libinput Accel Speed' -1
