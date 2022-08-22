@@ -1,5 +1,7 @@
 [Unit]
 Description=Weekly backup
+After=mnt-usb.mount
+ConditionPathIsMountPoint=/mnt/usb
 
 [Timer]
 OnCalendar=weekly
