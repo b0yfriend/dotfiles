@@ -1,0 +1,59 @@
+#!/usr/bin/env bash
+
+# backup script
+
+options='-aAXHv --delete'
+
+shopt -s globstar
+paths_to_exclude=(
+	'/dev/*'
+	'/proc/*'
+	'/sys/*'
+	'/tmp/*'
+	'/run/*'
+	'/mnt/*'
+	'/media/*'
+	'/var/log/*'
+	'/lost+found'
+	'/var/lib/dhcpcd/*'
+	'/home/*/.cache/*'
+	'/home/*/.local/*'
+	'/home/*/.config/google-chrome'
+	'/home/*/.config/discord'
+	'/home/*/.config/libreoffice'
+	'/home/*/.config/.java'
+	'/home/*/.n[vp]*'
+	'/home/*/.cargo'
+	'/home/*/.minecraft'
+	'/home/*/.steam'
+	'/home/*/aur/*/*'
+	'/**/node_modules'
+)
+
+for path in "${paths_to_exclude[@]}"; do
+	options+=" --exclude=$path"
+done
+
+src_path=/
+backup_dir=/mnt/usb/
+
+if ! [[ -w $backup_dir ]]; then
+	printf "$backup_dir does not exist or is not writable.\n" >&2 && exit 1
+fi
+
+if ! mountpoint "$backup_dir" >/dev/null; then
+	printf "$backup_dir is not a separate filesystem! Aborting...\n" >&2 && exit 1
+fi
+
+date=$(date "+%Y-%b--%d_%T")
+backup_path="$backup_dir/$date"
+
+path_to_most_recent_backup="$backup_dir/most_recent_backup"
+options+=" --link-dest=$path_to_most_recent_backup"
+
+printf "backing up $src_path to $backup_path...\n"
+rsync $options $src_path $backup_path
+
+rm -f "$path_to_most_recent_backup"
+
+ln -s "$backup_path" "$path_to_most_recent_backup"
