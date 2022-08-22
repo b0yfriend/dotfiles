@@ -1,0 +1,15 @@
+# Static information about the filesystems.
+# See fstab(5) for details.
+
+# <file system> <dir> <type> <options> <dump> <pass>
+# /dev/sda3
+UUID=7a05f88d-7569-49d0-b67f-94664176edda	/	ext4	rw,relatime	0 1
+
+# /dev/sda1
+UUID=2320-E5DB	/boot	vfat	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,utf8,errors=remount-ro	0 2
+
+# /dev/sda2
+UUID=cef441ad-f6d4-411c-878f-4c3c6f4744cc	none	swap	defaults	0 0
+
+# Backup partition
+LABEL=DESKTOP_BACKUPS	/mnt/usb	ext4	defaults,nofail	 0 2

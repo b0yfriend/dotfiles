@@ -1,0 +1,113 @@
+2022-02-02 21:04:10 INFO run.py:219 GNS3 server version 2.2.29
+2022-02-02 21:04:10 INFO run.py:221 Copyright (c) 2007-2022 GNS3 Technologies Inc.
+2022-02-02 21:04:10 INFO run.py:224 Config file /home/anton/.config/GNS3/2.2/gns3_server.conf loaded
+2022-02-02 21:04:10 WARNING run.py:230 Local mode is enabled. Beware, clients will have full control on your filesystem
+2022-02-02 21:04:10 INFO run.py:237 HTTP authentication is enabled with username 'admin'
+2022-02-02 21:04:10 INFO run.py:243 Running with Python 3.10.2 and has PID 23777
+2022-02-02 21:04:10 INFO run.py:79 Current locale is en_US.UTF-8
+2022-02-02 21:04:10 INFO web_server.py:318 Starting server on localhost:3080
+2022-02-02 21:04:10 INFO __init__.py:63 Load controller configuration file /home/anton/.config/GNS3/2.2/gns3_controller.conf
+2022-02-02 21:04:10 INFO __init__.py:67 Controller is starting
+2022-02-02 21:04:10 INFO compute.py:64 Create compute local
+2022-02-02 21:04:10 INFO compute.py:364 Connecting to compute 'local'
+2022-02-02 21:04:10 INFO web_log.py:206 ::1 [03/Feb/2022:05:04:10 +0000] "GET /v2/compute/capabilities HTTP/1.1" 200 553 "-" "Python/3.10 aiohttp/3.8.1"
+2022-02-02 21:04:10 INFO notification_handler.py:50 New client has connected to compute WebSocket
+2022-02-02 21:04:10 INFO compute.py:434 Connected to compute 'local' WebSocket 'http://localhost:3080/v2/compute/notifications/ws'
+2022-02-02 21:04:10 INFO web_log.py:206 ::1 [03/Feb/2022:05:04:10 +0000] "GET /v2/version HTTP/1.1" 200 228 "-" "GNS3 QT Client v2.2.29"
+2022-02-02 21:04:10 INFO web_log.py:206 ::1 [03/Feb/2022:05:04:10 +0000] "GET /v2/version HTTP/1.1" 200 228 "-" "GNS3 QT Client v2.2.29"
+2022-02-02 21:04:10 INFO notification_handler.py:73 New client has connected to controller WebSocket
+2022-02-02 21:04:10 INFO web_log.py:206 ::1 [03/Feb/2022:05:04:10 +0000] "GET /v2/computes HTTP/1.1" 200 1022 "-" "GNS3 QT Client v2.2.29"
+2022-02-02 21:04:10 INFO web_log.py:206 ::1 [03/Feb/2022:05:04:10 +0000] "GET /v2/templates HTTP/1.1" 200 4118 "-" "GNS3 QT Client v2.2.29"
+2022-02-02 21:04:10 INFO web_log.py:206 ::1 [03/Feb/2022:05:04:10 +0000] "GET /v2/appliances?symbol_theme=Classic HTTP/1.1" 200 820742 "-" "GNS3 QT Client v2.2.29"
+2022-02-02 21:04:10 INFO web_log.py:206 ::1 [03/Feb/2022:05:04:10 +0000] "GET /v2/projects HTTP/1.1" 200 817 "-" "GNS3 QT Client v2.2.29"
+2022-02-02 21:04:10 INFO web_log.py:206 ::1 [03/Feb/2022:05:04:10 +0000] "GET /v2/projects HTTP/1.1" 200 817 "-" "GNS3 QT Client v2.2.29"
+2022-02-02 21:04:18 INFO project.py:78 Project a9872c99-6ba9-4470-8e19-c930a40e6f9d with path '/home/anton/projects/GNS3/projects/testing' created
+2022-02-02 21:04:18 INFO web_log.py:206 ::1 [03/Feb/2022:05:04:18 +0000] "POST /v2/compute/projects HTTP/1.1" 201 303 "-" "Python/3.10 aiohttp/3.8.1"
+2022-02-02 21:04:18 INFO __init__.py:303 Creating new hypervisor localhost:55171 with working directory /home/anton/projects/GNS3/projects/testing/project-files/dynamips
+2022-02-02 21:04:18 INFO hypervisor.py:127 Starting Dynamips: ['/usr/bin/dynamips', '-N1', '-l', 'dynamips_i1_log.txt', '-H', 'localhost:55171']
+2022-02-02 21:04:18 INFO hypervisor.py:129 Dynamips process logging to /home/anton/projects/GNS3/projects/testing/project-files/dynamips/dynamips_i1_stdout.txt
+2022-02-02 21:04:18 INFO hypervisor.py:136 Dynamips process started PID=23789
+2022-02-02 21:04:18 INFO __init__.py:305 Hypervisor localhost:55171 has successfully started
+2022-02-02 21:04:18 INFO dynamips_hypervisor.py:92 Connected to Dynamips hypervisor on localhost:55171 after 0.2553 seconds
+2022-02-02 21:04:18 INFO ethernet_switch.py:187 Ethernet switch "Switch1" [b5c7216f-9929-4121-96bf-db959017e66d] has been created
+2022-02-02 21:04:18 INFO web_log.py:206 127.0.0.1 [03/Feb/2022:05:04:18 +0000] "POST /v2/compute/projects/a9872c99-6ba9-4470-8e19-c930a40e6f9d/ethernet_switch/nodes HTTP/1.1" 201 1562 "-" "Python/3.10 aiohttp/3.8.1"
+2022-02-02 21:04:18 INFO base_node.py:282 VPCS: PC1 [a678372e-601f-4c09-93d5-d6ac9b3ddca6] created
+2022-02-02 21:04:18 INFO web_log.py:206 ::1 [03/Feb/2022:05:04:18 +0000] "POST /v2/compute/projects/a9872c99-6ba9-4470-8e19-c930a40e6f9d/vpcs/nodes HTTP/1.1" 201 579 "-" "Python/3.10 aiohttp/3.8.1"
+2022-02-02 21:04:18 INFO base_node.py:282 VPCS: PC2 [c3cea5f0-d685-4fbb-8e5d-5be5c22f1cfc] created
+2022-02-02 21:04:18 INFO web_log.py:206 127.0.0.1 [03/Feb/2022:05:04:18 +0000] "POST /v2/compute/projects/a9872c99-6ba9-4470-8e19-c930a40e6f9d/vpcs/nodes HTTP/1.1" 201 579 "-" "Python/3.10 aiohttp/3.8.1"
+2022-02-02 21:04:18 INFO web_log.py:206 ::1 [03/Feb/2022:05:04:18 +0000] "POST /v2/compute/projects/a9872c99-6ba9-4470-8e19-c930a40e6f9d/ports/udp HTTP/1.1" 201 244 "-" "Python/3.10 aiohttp/3.8.1"
+2022-02-02 21:04:18 INFO web_log.py:206 127.0.0.1 [03/Feb/2022:05:04:18 +0000] "POST /v2/compute/projects/a9872c99-6ba9-4470-8e19-c930a40e6f9d/ports/udp HTTP/1.1" 201 244 "-" "Python/3.10 aiohttp/3.8.1"
+2022-02-02 21:04:18 INFO vpcs_vm.py:376 VPCS "PC1" [a678372e-601f-4c09-93d5-d6ac9b3ddca6]: NIO UDP added to port 0
+2022-02-02 21:04:18 INFO web_log.py:206 ::1 [03/Feb/2022:05:04:18 +0000] "POST /v2/compute/projects/a9872c99-6ba9-4470-8e19-c930a40e6f9d/vpcs/nodes/a678372e-601f-4c09-93d5-d6ac9b3ddca6/adapters/0/ports/0/nio HTTP/1.1" 201 379 "-" "Python/3.10 aiohttp/3.8.1"
+2022-02-02 21:04:18 INFO ethernet_switch.py:275 Ethernet switch "Switch1" [b5c7216f-9929-4121-96bf-db959017e66d]: NIO udp-0d22dd7b-7110-4931-9404-1fba536e0ef5 bound to port 0
+2022-02-02 21:04:18 INFO ethernet_switch.py:365 Ethernet switch "Switch1" [b5c7216f-9929-4121-96bf-db959017e66d]: port 0 set as an access port in VLAN 1
+2022-02-02 21:04:18 INFO web_log.py:206 127.0.0.1 [03/Feb/2022:05:04:18 +0000] "POST /v2/compute/projects/a9872c99-6ba9-4470-8e19-c930a40e6f9d/ethernet_switch/nodes/b5c7216f-9929-4121-96bf-db959017e66d/adapters/0/ports/0/nio HTTP/1.1" 201 390 "-" "Python/3.10 aiohttp/3.8.1"
+2022-02-02 21:04:18 INFO web_log.py:206 ::1 [03/Feb/2022:05:04:18 +0000] "POST /v2/compute/projects/a9872c99-6ba9-4470-8e19-c930a40e6f9d/ports/udp HTTP/1.1" 201 244 "-" "Python/3.10 aiohttp/3.8.1"
+2022-02-02 21:04:18 INFO web_log.py:206 127.0.0.1 [03/Feb/2022:05:04:18 +0000] "POST /v2/compute/projects/a9872c99-6ba9-4470-8e19-c930a40e6f9d/ports/udp HTTP/1.1" 201 244 "-" "Python/3.10 aiohttp/3.8.1"
+2022-02-02 21:04:18 INFO ethernet_switch.py:275 Ethernet switch "Switch1" [b5c7216f-9929-4121-96bf-db959017e66d]: NIO udp-01ef9b7f-e6e3-409c-9767-450acfda7e01 bound to port 1
+2022-02-02 21:04:18 INFO ethernet_switch.py:365 Ethernet switch "Switch1" [b5c7216f-9929-4121-96bf-db959017e66d]: port 1 set as an access port in VLAN 1
+2022-02-02 21:04:18 INFO web_log.py:206 ::1 [03/Feb/2022:05:04:18 +0000] "POST /v2/compute/projects/a9872c99-6ba9-4470-8e19-c930a40e6f9d/ethernet_switch/nodes/b5c7216f-9929-4121-96bf-db959017e66d/adapters/0/ports/1/nio HTTP/1.1" 201 390 "-" "Python/3.10 aiohttp/3.8.1"
+2022-02-02 21:04:18 INFO vpcs_vm.py:376 VPCS "PC2" [c3cea5f0-d685-4fbb-8e5d-5be5c22f1cfc]: NIO UDP added to port 0
+2022-02-02 21:04:18 INFO web_log.py:206 127.0.0.1 [03/Feb/2022:05:04:18 +0000] "POST /v2/compute/projects/a9872c99-6ba9-4470-8e19-c930a40e6f9d/vpcs/nodes/c3cea5f0-d685-4fbb-8e5d-5be5c22f1cfc/adapters/0/ports/0/nio HTTP/1.1" 201 379 "-" "Python/3.10 aiohttp/3.8.1"
+2022-02-02 21:04:18 INFO web_log.py:206 ::1 [03/Feb/2022:05:04:18 +0000] "POST /v2/projects/a9872c99-6ba9-4470-8e19-c930a40e6f9d/open HTTP/1.1" 201 752 "-" "GNS3 QT Client v2.2.29"
+2022-02-02 21:04:18 INFO web_log.py:206 ::1 [03/Feb/2022:05:04:18 +0000] "GET /v2/projects/a9872c99-6ba9-4470-8e19-c930a40e6f9d/nodes HTTP/1.1" 200 8393 "-" "GNS3 QT Client v2.2.29"
+2022-02-02 21:04:18 INFO project_handler.py:272 New client has connected to the notification stream for project ID 'a9872c99-6ba9-4470-8e19-c930a40e6f9d' (WebSocket method)
+2022-02-02 21:04:18 INFO web_log.py:206 ::1 [03/Feb/2022:05:04:18 +0000] "GET /v2/projects/a9872c99-6ba9-4470-8e19-c930a40e6f9d/links HTTP/1.1" 200 2858 "-" "GNS3 QT Client v2.2.29"
+2022-02-02 21:04:18 INFO web_log.py:206 ::1 [03/Feb/2022:05:04:18 +0000] "GET /v2/projects/a9872c99-6ba9-4470-8e19-c930a40e6f9d/drawings HTTP/1.1" 200 206 "-" "GNS3 QT Client v2.2.29"
+2022-02-02 21:04:22 INFO web_log.py:206 127.0.0.1 [03/Feb/2022:05:04:22 +0000] "POST /v2/compute/projects/a9872c99-6ba9-4470-8e19-c930a40e6f9d/ethernet_switch/nodes/b5c7216f-9929-4121-96bf-db959017e66d/start HTTP/1.1" 204 198 "-" "Python/3.10 aiohttp/3.8.1"
+2022-02-02 21:04:22 INFO base_node.py:822 VPCS: 'PC2' [c3cea5f0-d685-4fbb-8e5d-5be5c22f1cfc]:local UDP tunnel created between port 10004 and 10005
+2022-02-02 21:04:22 INFO vpcs_vm.py:225 Starting VPCS: ['/usr/bin/vpcs', '-p', '5004', '-m', '1', '-i', '1', '-F', '-R', '-s', '10004', '-c', '10005', '-t', '127.0.0.1', 'startup.vpc']
+2022-02-02 21:04:22 INFO vpcs_vm.py:227 Logging to /home/anton/projects/GNS3/projects/testing/project-files/vpcs/c3cea5f0-d685-4fbb-8e5d-5be5c22f1cfc/vpcs.log
+2022-02-02 21:04:22 INFO base_node.py:655 Starting new uBridge hypervisor localhost:36321
+2022-02-02 21:04:22 INFO base_node.py:822 VPCS: 'PC1' [a678372e-601f-4c09-93d5-d6ac9b3ddca6]:local UDP tunnel created between port 10006 and 10007
+2022-02-02 21:04:22 INFO vpcs_vm.py:225 Starting VPCS: ['/usr/bin/vpcs', '-p', '5002', '-m', '0', '-i', '1', '-F', '-R', '-s', '10006', '-c', '10007', '-t', '127.0.0.1', 'startup.vpc']
+2022-02-02 21:04:22 INFO vpcs_vm.py:227 Logging to /home/anton/projects/GNS3/projects/testing/project-files/vpcs/a678372e-601f-4c09-93d5-d6ac9b3ddca6/vpcs.log
+2022-02-02 21:04:22 INFO base_node.py:655 Starting new uBridge hypervisor localhost:32813
+2022-02-02 21:04:22 INFO hypervisor.py:169 starting ubridge: ['/usr/bin/ubridge', '-H', 'localhost:36321']
+2022-02-02 21:04:22 INFO hypervisor.py:171 logging to /home/anton/projects/GNS3/projects/testing/project-files/vpcs/c3cea5f0-d685-4fbb-8e5d-5be5c22f1cfc/ubridge.log
+2022-02-02 21:04:22 INFO hypervisor.py:179 ubridge started PID=23825
+2022-02-02 21:04:22 INFO base_node.py:658 Hypervisor localhost:36321 has successfully started
+2022-02-02 21:04:22 INFO hypervisor.py:169 starting ubridge: ['/usr/bin/ubridge', '-H', 'localhost:32813']
+2022-02-02 21:04:22 INFO hypervisor.py:171 logging to /home/anton/projects/GNS3/projects/testing/project-files/vpcs/a678372e-601f-4c09-93d5-d6ac9b3ddca6/ubridge.log
+2022-02-02 21:04:22 INFO hypervisor.py:179 ubridge started PID=23827
+2022-02-02 21:04:22 INFO base_node.py:658 Hypervisor localhost:32813 has successfully started
+2022-02-02 21:04:22 INFO ubridge_hypervisor.py:83 Connected to uBridge hypervisor on localhost:36321 after 0.1025 seconds
+2022-02-02 21:04:22 INFO ubridge_hypervisor.py:83 Connected to uBridge hypervisor on localhost:32813 after 0.1018 seconds
+2022-02-02 21:04:22 INFO vpcs_vm.py:246 VPCS instance PC2 started PID=23809
+2022-02-02 21:04:22 INFO web_log.py:206 ::1 [03/Feb/2022:05:04:22 +0000] "POST /v2/compute/projects/a9872c99-6ba9-4470-8e19-c930a40e6f9d/vpcs/nodes/c3cea5f0-d685-4fbb-8e5d-5be5c22f1cfc/start HTTP/1.1" 200 670 "-" "Python/3.10 aiohttp/3.8.1"
+2022-02-02 21:04:22 INFO vpcs_vm.py:246 VPCS instance PC1 started PID=23817
+2022-02-02 21:04:22 INFO web_log.py:206 ::1 [03/Feb/2022:05:04:22 +0000] "POST /v2/compute/projects/a9872c99-6ba9-4470-8e19-c930a40e6f9d/vpcs/nodes/a678372e-601f-4c09-93d5-d6ac9b3ddca6/start HTTP/1.1" 200 670 "-" "Python/3.10 aiohttp/3.8.1"
+2022-02-02 21:04:22 INFO web_log.py:206 ::1 [03/Feb/2022:05:04:22 +0000] "POST /v2/projects/a9872c99-6ba9-4470-8e19-c930a40e6f9d/nodes/start HTTP/1.1" 204 164 "-" "GNS3 QT Client v2.2.29"
+2022-02-02 21:04:23 INFO web_log.py:206 ::1 [03/Feb/2022:05:04:23 +0000] "GET /v2/computes HTTP/1.1" 200 1022 "-" "GNS3 QT Client v2.2.29"
+2022-02-02 21:06:51 INFO vpcs_vm.py:262 VPCS process has stopped, return code: 0
+2022-02-02 21:06:51 INFO base_node.py:669 Stopping uBridge hypervisor localhost:32813
+2022-02-02 21:06:51 INFO hypervisor.py:208 Stopping uBridge process PID=23827
+2022-02-02 21:06:51 INFO web_log.py:206 ::1 [03/Feb/2022:05:06:51 +0000] "GET /v2/computes HTTP/1.1" 200 1022 "-" "GNS3 QT Client v2.2.29"
+2022-02-02 21:07:08 INFO vpcs_vm.py:262 VPCS process has stopped, return code: 0
+2022-02-02 21:07:08 INFO base_node.py:669 Stopping uBridge hypervisor localhost:36321
+2022-02-02 21:07:08 INFO hypervisor.py:208 Stopping uBridge process PID=23825
+2022-02-02 21:07:08 INFO web_log.py:206 ::1 [03/Feb/2022:05:07:08 +0000] "GET /v2/computes HTTP/1.1" 200 1022 "-" "GNS3 QT Client v2.2.29"
+2022-02-02 21:07:23 INFO web_log.py:206 ::1 [03/Feb/2022:05:07:23 +0000] "POST /v2/compute/projects/a9872c99-6ba9-4470-8e19-c930a40e6f9d/vpcs/nodes/c3cea5f0-d685-4fbb-8e5d-5be5c22f1cfc/stop HTTP/1.1" 204 186 "-" "Python/3.10 aiohttp/3.8.1"
+2022-02-02 21:07:23 INFO web_log.py:206 127.0.0.1 [03/Feb/2022:05:07:23 +0000] "POST /v2/compute/projects/a9872c99-6ba9-4470-8e19-c930a40e6f9d/ethernet_switch/nodes/b5c7216f-9929-4121-96bf-db959017e66d/stop HTTP/1.1" 204 197 "-" "Python/3.10 aiohttp/3.8.1"
+2022-02-02 21:07:23 INFO web_log.py:206 ::1 [03/Feb/2022:05:07:23 +0000] "POST /v2/compute/projects/a9872c99-6ba9-4470-8e19-c930a40e6f9d/vpcs/nodes/a678372e-601f-4c09-93d5-d6ac9b3ddca6/stop HTTP/1.1" 204 186 "-" "Python/3.10 aiohttp/3.8.1"
+2022-02-02 21:07:23 INFO web_log.py:206 ::1 [03/Feb/2022:05:07:23 +0000] "POST /v2/projects/a9872c99-6ba9-4470-8e19-c930a40e6f9d/nodes/stop HTTP/1.1" 204 163 "-" "GNS3 QT Client v2.2.29"
+2022-02-02 21:07:33 INFO notification_handler.py:82 Client has disconnected from controller WebSocket
+2022-02-02 21:07:33 INFO server_handler.py:53 Start shutting down the server
+2022-02-02 21:07:33 INFO web_log.py:206 127.0.0.1 [03/Feb/2022:05:07:33 +0000] "POST /v2/compute/projects/a9872c99-6ba9-4470-8e19-c930a40e6f9d/vpcs/nodes/c3cea5f0-d685-4fbb-8e5d-5be5c22f1cfc/stop HTTP/1.1" 204 186 "-" "Python/3.10 aiohttp/3.8.1"
+2022-02-02 21:07:33 INFO web_log.py:206 ::1 [03/Feb/2022:05:07:33 +0000] "POST /v2/compute/projects/a9872c99-6ba9-4470-8e19-c930a40e6f9d/vpcs/nodes/a678372e-601f-4c09-93d5-d6ac9b3ddca6/stop HTTP/1.1" 204 186 "-" "Python/3.10 aiohttp/3.8.1"
+2022-02-02 21:07:33 INFO web_log.py:206 127.0.0.1 [03/Feb/2022:05:07:33 +0000] "POST /v2/compute/projects/a9872c99-6ba9-4470-8e19-c930a40e6f9d/ethernet_switch/nodes/b5c7216f-9929-4121-96bf-db959017e66d/stop HTTP/1.1" 204 197 "-" "Python/3.10 aiohttp/3.8.1"
+2022-02-02 21:07:33 INFO base_node.py:331 VPCS: 'PC2' [c3cea5f0-d685-4fbb-8e5d-5be5c22f1cfc]: is closing
+2022-02-02 21:07:33 INFO base_node.py:331 VPCS: 'PC1' [a678372e-601f-4c09-93d5-d6ac9b3ddca6]: is closing
+2022-02-02 21:07:33 INFO ethernet_switch.py:252 Ethernet switch "Switch1" [b5c7216f-9929-4121-96bf-db959017e66d] has been deleted
+2022-02-02 21:07:33 INFO hypervisor.py:148 Stopping Dynamips process PID=23789
+2022-02-02 21:07:33 INFO project.py:361 Project a9872c99-6ba9-4470-8e19-c930a40e6f9d with path '/home/anton/projects/GNS3/projects/testing' closed
+2022-02-02 21:07:33 INFO web_log.py:206 ::1 [03/Feb/2022:05:07:33 +0000] "POST /v2/compute/projects/a9872c99-6ba9-4470-8e19-c930a40e6f9d/close HTTP/1.1" 204 166 "-" "Python/3.10 aiohttp/3.8.1"
+2022-02-02 21:07:33 INFO web_log.py:206 ::1 [03/Feb/2022:05:07:33 +0000] "POST /v2/shutdown HTTP/1.1" 201 195 "-" "GNS3 QT Client v2.2.29"
+2022-02-02 21:07:33 INFO web_server.py:113 Closing 2 websocket connections...
+2022-02-02 21:07:33 INFO compute.py:460 Connection closed to compute 'local' WebSocket 'http://localhost:3080/v2/compute/notifications/ws'
+2022-02-02 21:07:33 INFO project_handler.py:281 Client has disconnected from notification stream for project ID 'a9872c99-6ba9-4470-8e19-c930a40e6f9d' (WebSocket method)
+2022-02-02 21:07:33 INFO notification_handler.py:59 Client has disconnected from compute WebSocket
+2022-02-02 21:07:34 INFO compute.py:364 Connecting to compute 'local'
+2022-02-02 21:07:34 WARNING compute.py:367 Cannot connect to compute 'local': Cannot connect to host localhost:3080 ssl:default [Connect call failed ('127.0.0.1', 3080)]
+2022-02-02 21:07:35 INFO __init__.py:138 Controller is stopping
+2022-02-02 21:07:35 INFO run.py:272 Remove PID file /home/anton/.config/GNS3/2.2/gns3_server.pid

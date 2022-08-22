@@ -1,0 +1,10 @@
+*passwd*
+*shadow*
+*sudoers*
+*ca-certificates*
+*google-chrome*
+*discord*
+*obs-studio*
+etc/ssl/certs
+etc/group*
+

@@ -1,0 +1,4 @@
+2022-02-02 21:04:09 INFO logger.py:126 Log level: INFO
+2022-02-02 21:04:09 INFO main.py:259 GNS3 GUI version 2.2.29
+2022-02-02 21:04:09 INFO main.py:260 Copyright (c) 2007-2022 GNS3 Technologies Inc.
+2022-02-02 21:04:09 INFO main.py:261 Application started with /usr/bin/gns3

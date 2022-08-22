@@ -1,0 +1,11 @@
+# Increase volume
+"amixer sset Master unmute; amixer sset Master 5%+"
+  F12
+
+# Decrease volume
+"amixer sset Master unmute; amixer sset Master 5%-"
+  F11
+
+# Mute/Unmute volume
+"amixer sset Master toggle"
+  F10
