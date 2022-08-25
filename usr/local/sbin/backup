@@ -27,6 +27,7 @@ paths_to_exclude=(
 	'/home/*/.minecraft'
 	'/home/*/.steam'
 	'/home/*/aur/*/*'
+	'/home/**/dotfiles'
 	'/**/node_modules'
 )
 
