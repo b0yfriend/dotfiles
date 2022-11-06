@@ -18,7 +18,7 @@ local function goto_definition(split_cmd)
       util.jump_to_location(result[1], 'utf-8')
 
       if #result > 1 then
-        util.set_qflist(util.locations_to_items(result))
+        setqflist(util.locations_to_items(result))
         api.nvim_command("copen")
         api.nvim_command("wincmd p")
       end

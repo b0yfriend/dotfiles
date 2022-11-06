@@ -2,10 +2,10 @@ local M = {}
 
 M.setup = function()
 	local signs = {
-		{ hl_group_name = "DiagnosticSignError", text = "▪"},
-		{ hl_group_name = "DiagnosticSignWarn", text = "▪"},
-		{ hl_group_name = "DiagnosticSignHint", text = "▪"},
-		{ hl_group_name = "DiagnosticSignInfo", text = "▪"},
+		{ hl_group_name = "DiagnosticSignError", text = "▪" },
+		{ hl_group_name = "DiagnosticSignWarn", text = "▪" },
+		{ hl_group_name = "DiagnosticSignHint", text = "▪" },
+		{ hl_group_name = "DiagnosticSignInfo", text = "▪" },
 	}
 	for _idx, sign in pairs(signs) do
 		vim.fn.sign_define(
@@ -45,7 +45,7 @@ M.setup = function()
 end
 
 local function apply_lsp_keymaps(bufnr)
-	local opts = { noremap = true, silent = true}
+	local opts = { noremap = true, silent = true }
 	vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
 	vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
 	-- prefer goto_prev() & goto_next() for viewing diagnostics
@@ -67,10 +67,10 @@ local function apply_lsp_keymaps(bufnr)
 	vim.api.nvim_buf_set_keymap(bufnr, 'n', '[rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
 	--vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
 	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-	vim.api.nvim_buf_set_keymap(bufnr, 'n', '[f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+	vim.api.nvim_buf_set_keymap(bufnr, 'n', '[f', '<cmd>lua vim.lsp.buf.format({ async = true })<CR>', opts)
 end
 
-M.on_attach = function (client, bufnr)
+M.on_attach = function(client, bufnr)
 	-- if client.name == "servername (e.g. clangd, tsserver)" then
 	--   // whatever you like
 	-- end
